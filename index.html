@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sociedades Secretas: A História Oculta do Ocidente | Prometheus</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0a0a14;
+            --secondary-bg: #121224;
+            --accent-gold: #d4af37;
+            --accent-red: #7a1515;
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            font-family: 'Cormorant Garamond', serif;
+            position: relative;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 2rem 4rem;
+            position: relative;
+            background-color: var(--primary-bg);
+            background-image: url('https://cdn.jsdelivr.net/gh/tomcardew/background-images@main/esoteric-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .slide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gold-text {
+            color: var(--accent-gold);
+        }
+
+        .red-text {
+            color: var(--accent-red);
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .content-card {
+            background-color: rgba(10, 10, 20, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+            margin-bottom: 2rem;
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--accent-gold);
+            color: black;
+        }
+
+        .esoteric-symbol {
+            position: absolute;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .symbol-1 {
+            top: 10%;
+            left: 5%;
+            font-size: 3rem;
+            transform: rotate(-15deg);
+        }
+
+        .symbol-2 {
+            bottom: 10%;
+            right: 5%;
+            font-size: 3rem;
+            transform: rotate(15deg);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--text-light);
+            padding: 0.5rem;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+        }
+
+        .date {
+            font-weight: bold;
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 1rem 2rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .concept-card {
+            background-color: rgba(15, 15, 30, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .concept-title {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Print styles for PDF export */
+        @media print {
+            .nav-buttons {
+                display: none;
+            }
+            
+            .slide {
+                page-break-inside: avoid;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <div class="nav-button" id="prevBtn" onclick="navigateSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="nav-button" id="nextBtn" onclick="navigateSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <!-- Slide 1: Cover -->
+    <section id="slide-1" class="slide">
+        <div class="slide-container flex flex-col items-center justify-center h-full text-center">
+            <h1 class="text-6xl font-bold mb-6 gold-text">Sociedades Secretas</h1>
+            <h2 class="text-4xl mb-12">A História Oculta do Ocidente</h2>
+            
+            <div class="flex justify-center items-center gap-16 mb-12">
+                <img src="https://cdn.jsdelivr.net/gh/tomcardew/esoteric-symbols@main/providence-eye.png" alt="Olho da Providência" class="w-32 h-32 object-contain">
+                <img src="https://cdn.jsdelivr.net/gh/tomcardew/esoteric-symbols@main/rose-cross.png" alt="Rosa Cruz" class="w-32 h-32 object-contain">
+                <img src="https://cdn.jsdelivr.net/gh/tomcardew/esoteric-symbols@main/square-compass.png" alt="Esquadro e Compasso" class="w-32 h-32 object-contain">
+            </div>
+            
+            <p class="text-xl max-w-3xl">O rio subterrâneo de conhecimento que moldou a história ocidental, das areias do Egito antigo aos bastidores do poder moderno.</p>
+            
+            <div class="mt-16">
+                <img src="https://files.fm/thumb_show.php?i=gt33mzj7jq" alt="Prometheus Logo" class="h-24">
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">⚶</div>
+        <div class="esoteric-symbol symbol-2">☤</div>
+    </section>
+
+    <!-- Slide 2: Conceitos Fundamentais -->
+    <section id="slide-2" class="slide">
+        <div class="slide-container">
+            <h2 class="title">O Código Escondido: <span class="gold-text">Ideias Fundamentais</span></h2>
+            
+            <div class="two-columns mt-10">
+                <div class="concept-card">
+                    <h3 class="concept-title">Correspondências</h3>
+                    <p>"Assim na Terra como no Céu" - O Macrocosmo (universo) e o Microcosmo (ser humano) são espelhos um do outro. Todas as coisas na natureza estão conectadas por uma rede invisível de relações.</p>
+                    <div class="flex justify-center mt-4">
+                        <img src="https://symbolikon.com/wp-content/uploads/2020/10/Alchemy-symbols-meanings.png" alt="Tabela de Correspondências" class="h-32 object-contain">
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Imaginação Ativa</h3>
+                    <p>A força mental direcionada como ferramenta espiritual. Não é fantasia passiva, mas visualização focada e guiada - um "músculo psíquico" essencial em toda prática esotérica.</p>
+                    <div class="flex justify-center mt-4">
+                        <img src="https://frithluton.com/wp-content/uploads/2014/09/Active-imagination.jpg" alt="Imaginação Ativa" class="h-32 object-contain">
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Transmutação</h3>
+                    <p>A Grande Obra alquímica - transformação de algo "grosseiro" em algo nobre. A verdadeira alquimia é interna: transformar o ser, elevando-se a novos níveis de consciência.</p>
+                    <div class="flex justify-center mt-4">
+                        <img src="https://symbolikon.com/wp-content/uploads/edd/2019/09/Alchemy-gold-bold-400w.png" alt="Transmutação Alquímica" class="h-32 object-contain">
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Concordância e Transmissão</h3>
+                    <p>Todas as tradições bebem de uma fonte comum (Tradição Primordial). O conhecimento é sempre transmitido de mestre para discípulo - ninguém o inventa do nada.</p>
+                    <div class="flex justify-center mt-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Kabbalah_Tree_of_Life.png" alt="Árvore da Vida" class="h-32 object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">☿</div>
+        <div class="esoteric-symbol symbol-2">♄</div>
+    </section>
+
+    <!-- Slide 3: As Fontes Antigas -->
+    <section id="slide-3" class="slide">
+        <div class="slide-container">
+            <h2 class="title">As Fontes Antigas: <span class="gold-text">Onde Tudo Começou?</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">Egito: Mito e Mistério</h3>
+                        <p>Nossa jornada nos leva inevitavelmente ao Egito. Não apenas o Egito dos faraós e pirâmides que conhecemos, mas um Egito mais profundo, mítico. Os Mistérios de Ísis e Osíris, talvez intensificados sob Akhenaton (c. 1353 a.C.), formaram a base do que viria a ser conhecido como conhecimento hermético.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://www.egypttoursportal.com/images/2018/06/Ancient-Egyptian-Symbols-Egypt-Tours-Portal.jpg" alt="Símbolos Egípcios" class="w-full rounded-md">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">Hermes Trismegisto: O Mensageiro Lendário</h3>
+                        <p>Uma figura central na história esotérica: Hermes Trismegisto, o "Três Vezes Grande". A tradição o associa ao deus egípcio Thoth e ao Mercúrio dos romanos. Atribuído a ele está o <i>Corpus Hermeticum</i>, conjunto de textos que formaria a base do hermetismo ocidental, embora historiadores modernos o datem dos primeiros séculos d.C.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://study.com/cimages/multimages/16/hermes_trismegistus_by_j.a.knapp1421544193930332198.jpg" alt="Hermes Trismegisto" class="w-full rounded-md">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">Grécia: Os Filósofos Iniciados</h3>
+                    <p>O Egito era a Meca do conhecimento antigo, e os gregos sabiam disso. Heródoto mesmo afirma que os Mistérios gregos nasceram da influência egípcia. Os grandes filósofos gregos – Pitágoras, Solon, Platão, Tales – peregrinaram até o Egito em busca de conhecimento. Eles não eram apenas filósofos; eram iniciados nos mistérios. Tinham uma visão de mundo esotérica, não profana. A filosofia e a ciência ocidentais, em sua raiz, podem ter sido nutridas por conhecimento secreto.</p>
+                    
+                    <div class="mt-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg" alt="Escola de Atenas de Rafael" class="w-full rounded-md">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">c. 1353 a.C.</span> - Reinado de Akhenaton (Amenhotep IV) com possível intensificação dos Mistérios</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">c. 570-495 a.C.</span> - Pitágoras viaja para o Egito e funda sua escola após retornar</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">c. 427-347 a.C.</span> - Platão desenvolve filosofia influenciada pelos mistérios egípcios</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">☥</div>
+        <div class="esoteric-symbol symbol-2">𓂀</div>
+    </section>
+
+    <!-- Slide 4: O Caldeirão Alexandrino -->
+    <section id="slide-4" class="slide">
+        <div class="slide-container">
+            <h2 class="title">O Caldeirão Alexandrino: <span class="gold-text">Alquimia, Astrologia e Hermetismo</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">A Fusão Greco-Egípcia</h3>
+                        <p>Com Alexandre, o Grande, conquistando o mundo conhecido e fundando Alexandria, um intercâmbio cultural explode. A Biblioteca de Alexandria vira um centro de saber global, onde tradições egípcias, gregas, persas e até indianas se fundem. É aqui que a Alquimia Greco-Egípcia floresce, misturando filosofia, espiritualidade e ciência primitiva.</p>
+                        
+                        <p class="mt-4">O alquimista verdadeiro via a transmutação dos metais como um espelho do seu próprio trabalho espiritual interno. O laboratório e a alma se transformavam juntos, como resumido na máxima: <i>Ora et Labora</i> – Ore e Trabalhe.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Ancientlibraryalex.jpg" alt="Biblioteca de Alexandria" class="w-full rounded-md">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">O Mapa Cósmico: Astrologia</h3>
+                        <p>Ao lado da Alquimia, a Astrologia. Considerada a "mãe" das ciências esotéricas, a astrologia antiga era uma cosmovisão, uma maneira complexa de entender a relação do homem com o cosmos, as influências planetárias sobre tudo na Terra.</p>
+                        
+                        <p class="mt-4">O <i>Tetrabiblos</i> de Ptolomeu se torna a bíblia astrológica, influenciando alquimistas como Zósimo de Panópolis, que enfatizava a transmutação espiritual. A ciência e o sagrado ainda não estavam separados.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://www.mediastorehouse.com/p/617/alchemical-symbol-transmutation-base-metal-9765181.jpg.webp" alt="Símbolos Alquímicos" class="w-full rounded-md">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">O Legado do Corpus Hermeticum</h3>
+                    <p>Nesse caldeirão cultural (entre 300 a.C. e 300 d.C.), o <i>Corpus Hermeticum</i> toma forma. Textos diversos, muitas vezes em linguagem alquímica, influenciados pela filosofia grega, judaísmo místico e zoroastrismo. Embora atribuídos a Hermes Trismegisto e ao Egito antigo, estudos modernos indicam que foram compostos nos primeiros séculos da era cristã. Sua influência, contudo, seria duradoura, atravessando séculos.</p>
+                    
+                    <div class="mt-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Corpus_Hermeticum.jpg/330px-Corpus_Hermeticum.jpg" alt="Corpus Hermeticum" class="mx-auto rounded-md">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">332 a.C.</span> - Alexandre, o Grande, funda Alexandria</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">c. 100-300 d.C.</span> - Período provável de composição do Corpus Hermeticum</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">c. 300 d.C.</span> - Zósimo de Panópolis desenvolve alquimia espiritual</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">♎</div>
+        <div class="esoteric-symbol symbol-2">🜔</div>
+    </section>
+
+    <!-- Slide 5: Correntes Subterrâneas -->
+    <section id="slide-5" class="slide">
+        <div class="slide-container">
+            <h2 class="title">Correntes Subterrâneas: <span class="gold-text">Neoplatonismo e Gnosticismo</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">Neoplatonismo: Filosofia e Prática Divina</h3>
+                        <p>Frequentemente subestimado em relatos populares, o Neoplatonismo foi talvez mais influente para o esoterismo ocidental do que o próprio Egito "puro". Plotino (205-270 d.C.), discípulo de Amônio Sacas, é a figura central. Seus discípulos, como Jâmblico e Proclo, não eram apenas filósofos místicos.</p>
+                        
+                        <p class="mt-4">Eles praticavam a <i>Teurgia</i> – literalmente "trabalho divino". Rituais cerimoniais para elevar a alma, aproximá-la das divindades e despertar a natureza divina latente. Dizem que Jâmblico, o "Divino", até levitava e brilhava durante suas preces.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Plotinos.jpg/330px-Plotinos.jpg" alt="Plotino" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Plotino (205-270 d.C.)</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">Gnosticismo: A Centelha Perdida</h3>
+                        <p>Enquanto o Cristianismo se formava, ao lado florescia o Gnosticismo. Não um movimento único, mas um conjunto de sistemas sincréticos, muitos com verniz cristão. A diferença crucial? Para os cristãos ortodoxos, a fé salvava. Para os gnósticos, era a <i>Gnosis</i> – o conhecimento direto, a sabedoria – que transmutava a alma.</p>
+                        
+                        <p class="mt-4">Muitos gnósticos tinham uma visão "negativa" do mundo material. Ele não teria sido criado pelo Deus supremo, mas por um Demiurgo inferior, orgulhoso e ignorante. Nós seríamos centelhas divinas aprisionadas neste mundo, vigiadas pelos ministros do Demiurgo, os Arcontes.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Codex_Tchacos_p33.jpg/220px-Codex_Tchacos_p33.jpg" alt="Manuscrito Gnóstico" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Página do Evangelho de Judas (Manuscrito Gnóstico)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">A Ponte para o Cristianismo</h3>
+                    <p>Enquanto o Cristianismo se estabelecia como religião dominante, uma relação complexa se desenvolvia com estas correntes esotéricas. Alguns Pais da Igreja, como Clemente de Alexandria e Agostinho, chegaram a ver Hermes Trismegisto como uma espécie de profeta pré-cristão.</p>
+                    
+                    <p class="mt-4">Esta visão permitiu que elementos do Hermetismo e do Neoplatonismo fossem assimilados pelo pensamento cristão, especialmente através de figuras como Pseudo-Dionísio, o Areopagita, cujas obras sobre angeologia e teologia mística tiveram profunda influência na mística cristã medieval.</p>
+                    
+                    <p class="mt-4">Essas correntes, mesmo perseguidas e abafadas, nunca morreram completamente e ecoam em muitos movimentos esotéricos posteriores, às vezes sem que eles mesmos percebam suas raízes gnósticas e neoplatônicas.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">205-270 d.C.</span> - Vida de Plotino, fundador do Neoplatonismo</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">c. 245-325 d.C.</span> - Jâmblico desenvolve práticas teúrgicas</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">c. 150-300 d.C.</span> - Florescimento das escolas gnósticas</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">☼</div>
+        <div class="esoteric-symbol symbol-2">☽</div>
+    </section>
+
+    <!-- Slide 6: A Ponte Árabe e os Templários -->
+    <section id="slide-6" class="slide">
+        <div class="slide-container">
+            <h2 class="title">A Ponte Árabe e Os Cavaleiros do Templo</h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">Alquimia, Magia e Astrologia Árabe</h3>
+                        <p>Durante o período medieval, enquanto a Europa passava pelo que alguns chamam de "Idade das Trevas", o mundo islâmico vivia sua Era de Ouro. Não podemos esquecer a contribuição árabe na preservação e expansão do conhecimento hermético.</p>
+                        
+                        <p class="mt-4">Eles eram mestres em Alquimia (mais refinada que a ocidental na época), Magia (muitas vezes baseada em letras, similar à judaica) e Astrologia (que serviu de ponte para conhecimentos hindus chegarem ao Ocidente). Esse conhecimento entra na Europa de forma decisiva com a invasão árabe da Península Ibérica no século VIII.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Al_Khwarizmi.jpg" alt="Astrônomo Árabe" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Representação de Al-Khwarizmi, matemático e astrônomo</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">A Ascensão e Queda dos Templários</h3>
+                        <p>Após a Primeira Cruzada, surge uma ordem que captura a imaginação até hoje: os Cavaleiros Templários. Fundados por Hugo de Payens com o apoio do influente São Bernardo de Claraval, eles se tornam imensamente ricos e poderosos – os banqueiros da Europa medieval.</p>
+                        
+                        <p class="mt-4">Mas o poder atrai inimigos. Em 1312, o Rei Filipe IV da França, endividado com a Ordem, e o Papa Clemente V, conspiram. O Grão-Mestre Jacques de Molay é preso, torturado e queimado. A lenda diz que, na fogueira, ele amaldiçoou o Rei e o Papa, que morreram em menos de um ano.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://symbolikon.com/wp-content/uploads/edd/2022/09/Knight-Templar-Seal-regular.png" alt="Selo Templário" class="mx-auto rounded-md h-48">
+                            <p class="text-center mt-2 text-sm">Selo dos Cavaleiros Templários</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">O Segredo Templário</h3>
+                    <p>Além da política, sempre houve sussurros: por que foram acusados de heresia? As confissões sob tortura não são confiáveis, mas o que sabemos é que os Templários passaram décadas no Oriente, em contato direto com tradições islâmicas e possivelmente com grupos esotéricos orientais.</p>
+                    
+                    <p class="mt-4">No mínimo, viram que muçulmanos e judeus não eram os demônios que a Igreja pintava. No máximo... teorias abundam: teriam contatado correntes sufis ou ismaelitas? Encontrado relíquias gnósticas sob o Templo de Salomão? Descoberto manuscritos antigos?</p>
+                    
+                    <p class="mt-4">Fato ou ficção, o mito Templário se torna uma fonte de inspiração fundamental para quase todos os movimentos iniciáticos ocidentais que viriam depois, da Maçonaria ao Rosacrucianismo.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">711 d.C.</span> - Início da presença árabe na Península Ibérica</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1118</span> - Fundação oficial da Ordem dos Templários</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1307</span> - Prisão dos Templários na França</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1312</span> - Dissolução oficial da Ordem pelo Papa Clemente V</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1314</span> - Execução de Jacques de Molay</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">☫</div>
+        <div class="esoteric-symbol symbol-2">♅</div>
+    </section>
+
+    <!-- Slide 7: Renascimento Esotérico -->
+    <section id="slide-7" class="slide">
+        <div class="slide-container">
+            <h2 class="title">Renascimento Esotérico: <span class="gold-text">O Despertar Hermético</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">O Big Bang Esotérico: Florença</h3>
+                        <p>Por volta de 1453, em Florença, Cosimo de Medici contrata o erudito Marsilio Ficino para traduzir Platão e outros filósofos gregos. Ele funda a Academia Platônica de Florença, o centro cultural da Europa. Mas aí, Ficino encontra um fragmento do <i>Corpus Hermeticum</i>.</p>
+                        
+                        <p class="mt-4">Cosimo fica tão impressionado que ordena: "Pare tudo! Esqueça Platão! Traduza Hermes Trismegisto!". Hermes vira a maior estrela intelectual da Renascença. Alguns eruditos chegam a dizer (uma heresia perigosíssima!) que ele era maior que Jesus.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://cdn.britannica.com/46/19246-050-097E6508/Marsilio-Ficino.jpg" alt="Marsilio Ficino" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Marsilio Ficino (1433-1499)</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">Pico della Mirandola e a Cabala Cristã</h3>
+                        <p>Um continuador genial de Ficino é Pico della Mirandola. Aos 23 anos, já sabia tudo que havia para saber na época. Ele se fascina pela Cabala judaica e busca uma síntese com o Cristianismo.</p>
+                        
+                        <p class="mt-4">Focando no Tetragrammaton (YHVH), Pico tem uma ideia audaciosa: inserir a letra Shin (ש) no meio do nome divino, formando YHShVH, que ele associa a Yeshua (Jesus). A partir disso, ele cria a Cabala Cristã, um sistema focado na magia angélica e na teurgia para purificar a alma.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Pico1.jpg" alt="Pico della Mirandola" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Pico della Mirandola (1463-1494)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">Agripa, Bruno e Paracelso: Compilando, Desafiando, Curando</h3>
+                    <p>Heinrich Cornelius Agrippa compila todo esse conhecimento em sua obra monumental, <i>Três Livros de Filosofia Oculta</i>. Ele não inventa, mas organiza tudo de forma didática... e avisa no final que embaralhou o conteúdo para proteger os segredos dos profanos!</p>
+                    
+                    <p class="mt-4">Giordano Bruno, influenciado por Ficino e Pico, mas rejeitando o Cristianismo, abraça a magia "egípcia" do Corpus Hermeticum e defende a supremacia de Hermes sobre Cristo. Seu fim, como sabemos, foi a fogueira em 1600 – um mártir do Hermetismo.</p>
+                    
+                    <p class="mt-4">Paracelso aplica todo esse conhecimento à Medicina, desafiando a autoridade de Galeno. Ele cria uma nova escola baseada na Alquimia, Astrologia e Magia Natural. Para ele, Deus fala através da Natureza ("o Livro da Natureza"). Compreendê-la é compreender a Deus e a missão humana de aperfeiçoá-la.</p>
+                    
+                    <div class="flex justify-center gap-8 mt-6">
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Cornelius_Agrippa.jpg" alt="Cornelius Agrippa" class="h-48 rounded-md">
+                            <p class="text-center mt-2 text-sm">Heinrich Cornelius Agrippa (1486-1535)</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.britannica.com/84/121084-050-E7DA0D94/Portrait-Paracelsus-Quinten-Massys-Paris-Louvre-Museum.jpg" alt="Paracelso" class="h-48 rounded-md">
+                            <p class="text-center mt-2 text-sm">Paracelso (1493-1541)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">1453</span> - Fundação da Academia Platônica de Florença</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1463</span> - Tradução do Corpus Hermeticum por Ficino</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1486</span> - "Discurso sobre a Dignidade do Homem" de Pico della Mirandola</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1531-1533</span> - Publicação dos Três Livros de Filosofia Oculta de Agrippa</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1600</span> - Execução de Giordano Bruno</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">♃</div>
+        <div class="esoteric-symbol symbol-2">☉</div>
+    </section>
+
+    <!-- Slide 8: A Rosa-Cruz -->
+    <section id="slide-8" class="slide">
+        <div class="slide-container">
+            <h2 class="title">A Queda de Hermes e a Ascensão da <span class="gold-text">Rosa-Cruz</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">O Golpe de Casaubon</h3>
+                        <p>A fama de Hermes Trismegisto sofre um golpe fatal. O erudito Isaac Casaubon, por volta de 1614, prova de forma contundente que o <i>Corpus Hermeticum</i> não era do Egito antigo, mas sim obra de cristãos dos primeiros séculos d.C.</p>
+                        
+                        <p class="mt-4">Hermes, o "pai" egípcio do esoterismo ocidental, "morre". A Europa esotérica fica órfã. Quem preencheria esse vazio?</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/HermesTrismegistusCauc.jpg" alt="Hermes Trismegisto" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Representação de Hermes Trismegisto</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">O Enigma Rosacruz</h3>
+                        <p>A resposta parece vir quase simultaneamente, no mesmo ano de 1614, com a publicação anônima na Alemanha do <i>Fama Fraternitatis Rosae Crucis</i> ("Notícias da Fraternidade da Rosa-Cruz").</p>
+                        
+                        <p class="mt-4">O texto conta a história mítica de Christian Rosenkreutz (CR), um nobre alemão que viaja ao Oriente, é iniciado, volta à Europa, funda uma pequena fraternidade secreta, morre, e 120 anos depois sua tumba é redescoberta, intacta, contendo seu corpo incorrupto e tesouros de conhecimento.</p>
+                        
+                        <p class="mt-4">Logo depois, em 1615, vem o <i>Confessio Fraternitatis</i>, um texto mais denso, e em 1616, <i>As Núpcias Químicas de Christian Rosenkreutz</i>, uma alegoria alquímica complexa.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rosy_Cross.svg/640px-Rosy_Cross.svg.png" alt="Rosa-Cruz" class="mx-auto rounded-md h-48">
+                            <p class="text-center mt-2 text-sm">Símbolo da Rosa-Cruz</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">A Febre Rosacruz</h3>
+                    <p>Farsa ou não, os manifestos causam uma revolução. O esoterismo ocidental nunca mais seria o mesmo. Entre 1614 e 1620, mais de 200 livros são publicados sobre o tema! Até o século XVIII, quase 900!</p>
+                    
+                    <p class="mt-4">Alguns defendendo, outros atacando, muitos implorando para se juntar à fraternidade... que se dizia invisível. "Nós lemos mentes", diziam eles, "contataremos quem for digno. Nos reunimos em locais invisíveis." Isso gerou fascínio e pânico (em Paris, pessoas temiam ser espionadas por Rosacruzes invisíveis!).</p>
+                    
+                    <p class="mt-4">Quem estava por trás disso? A maioria dos historiadores aponta para o teólogo luterano Johann Valentin Andreae, pelo menos como autor das <i>Núpcias Químicas</i>. Andreae mais tarde chamou o Rosacrucianismo de <i>ludibrium</i>. Significaria "farsa"? A pesquisadora Frances Yates argumenta que <i>ludibrium</i> também significava "peça de teatro", "jogo". Talvez fosse um jogo sério, uma forma de propagar ideias de reforma cultural, política e espiritual através de alegorias.</p>
+                    
+                    <div class="mt-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Fama_fraternitatis.jpg" alt="Fama Fraternitatis" class="mx-auto rounded-md">
+                        <p class="text-center mt-2 text-sm">Página do Fama Fraternitatis (1614)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">1614</span> - Casaubon refuta a antiguidade do Corpus Hermeticum</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1614</span> - Publicação do Fama Fraternitatis</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1615</span> - Publicação do Confessio Fraternitatis</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1616</span> - Publicação das Núpcias Químicas de Christian Rosenkreutz</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1614-1620</span> - Mais de 200 publicações sobre os Rosacruzes</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">⚹</div>
+        <div class="esoteric-symbol symbol-2">⚸</div>
+    </section>
+
+    <!-- Slide 9: A Maçonaria -->
+    <section id="slide-9" class="slide">
+        <div class="slide-container">
+            <h2 class="title">A Maçonaria: <span class="gold-text">O Templo Visível?</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">Dos Pedreiros à Filosofia</h3>
+                        <p>Para onde foram os Rosacruzes "invisíveis"? Muitos acreditam que encontraram um veículo na Maçonaria. Originalmente, guildas de pedreiros medievais (freemasons, pedreiros livres) com segredos técnicos de construção (valiosíssimos na época!).</p>
+                        
+                        <p class="mt-4">Eles tinham sinais, palavras e apertos de mão secretos para se reconhecerem enquanto viajavam pela Europa construindo catedrais e castelos. Com o tempo, nobres e intelectuais ("maçons aceitos") começaram a se interessar e foram admitidos nessas guildas.</p>
+                        
+                        <p class="mt-4">A Maçonaria "Operativa" (que realmente construía) gradualmente se tornou "Especulativa" (filosófica), usando as ferramentas e lendas da construção como alegorias para o autoaperfeiçoamento moral e espiritual.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Square_compasses.svg" alt="Esquadro e Compasso" class="mx-auto rounded-md h-48">
+                            <p class="text-center mt-2 text-sm">Esquadro e Compasso - Símbolo maçônico</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">O Terreno Fértil</h3>
+                        <p>Por que o interesse? As lojas maçônicas, com seu juramento de segredo, eram o ambiente perfeito para discutir ideias proibidas – hermetismo, rosacrucianismo, política subversiva. Já em 1638, um poema associava "Irmãos da Rosa Cruz" com a "palavra do maçom".</p>
+                        
+                        <p class="mt-4">Figuras importantes como Robert Moray (tradutor dos manifestos Rosacruzes) e Elias Ashmole (erudito rosacruciano, creditado por muitos como criador do grau de Mestre Maçom) eram ambos maçons e rosacrucianistas. A Maçonaria parece ter se estabelecido no "humus", no terreno fértil deixado pela Rosa-Cruz.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Plato%27s_academy_mosaic_from_pompeii.jpg" alt="Mosaico filosófico" class="w-full rounded-md">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">A Lenda de Hiram e os Altos Graus</h3>
+                    <p>Em 1717, quatro lojas de Londres fundam a Grande Loja da Inglaterra, marco da Maçonaria moderna, inicialmente com dois graus (Aprendiz e Companheiro). O terceiro grau, o de Mestre Maçom, surge depois, centrado na lenda de Hiram Abiff, o arquiteto do Templo de Salomão, assassinado por companheiros que queriam seus segredos. Sua descoberta na tumba ecoa a lenda de Christian Rosenkreutz.</p>
+                    
+                    <p class="mt-4">Logo após 1717, explode uma nova febre: a dos Altos Graus maçônicos – sistemas complexos que iam além do Mestrado. Milhares de graus e centenas de sistemas surgem! Quase todos com forte elemento Rosacruz.</p>
+                    
+                    <p class="mt-4">O mais famoso e duradouro, o grau 18 do Rito Escocês Antigo e Aceito, é o de Cavaleiro Rosa-Cruz. O próprio Rito Escocês pode ter sido criado como uma moldura para este grau central. A Rosa-Cruz, nascida em 1614, agora florescia abertamente dentro da estrutura maçônica.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">1646</span> - Elias Ashmole é iniciado na Maçonaria</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1717</span> - Fundação da Grande Loja da Inglaterra</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">c. 1730</span> - Desenvolvimento do grau de Mestre Maçom</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1730-1780</span> - Explosão dos sistemas de Altos Graus</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1801</span> - Fundação oficial do Supremo Conselho do Rito Escocês Antigo e Aceito</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">⚱</div>
+        <div class="esoteric-symbol symbol-2">⚶</div>
+    </section>
+
+    <!-- Slide 10: Variações e Vertentes -->
+    <section id="slide-10" class="slide">
+        <div class="slide-container">
+            <h2 class="title">Variações e Vertentes: <span class="gold-text">Pasqually, Saint-Martin, Cagliostro</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">A Reintegração de Pasqually</h3>
+                        <p>Nesse cenário maçônico efervescente, surge Martinez de Pasqually, com sua Ordem dos Cavaleiros Maçons Elus Coëns do Universo. Ele propõe um sistema maçônico único, misturando Maçonaria com Teurgia e sua doutrina da Reintegração dos Seres.</p>
+                        
+                        <p class="mt-4">Uma visão com ecos gnósticos: Deus cria espíritos, alguns se rebelam, criando desequilíbrio. O mundo material é criado como prisão para eles. Deus então cria o Homem primordial (Adão Kadmon) para reconciliá-los, mas ele também cai. A humanidade fragmentada é o resultado. Deus envia Cristo como Reconciliador.</p>
+                        
+                        <p class="mt-4">O objetivo dos Elus Coëns era, através de rituais teúrgicos complexos e extenuantes, reintegrar o homem a Deus e, através dele, toda a criação. Dizem que fenômenos místicos (anjos, luzes, perfumes) ocorriam em suas cerimônias.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">Saint-Martin e Willermoz: Caminhos Divergentes</h3>
+                        <p>Pasqually influencia dois discípulos chave:</p>
+                        
+                        <p class="mt-4"><strong>Louis-Claude de Saint-Martin:</strong> Seu secretário. Após a morte de Pasqually, ele internaliza a doutrina, rejeita rituais complexos e foca na "via cardíaca", a prece interior. Seu caminho ficou conhecido como Martinismo. Ele também se torna discípulo póstumo do místico alemão Jacob Boehme.</p>
+                        
+                        <p class="mt-4"><strong>Jean-Baptiste Willermoz:</strong> Um rico comerciante e maçom dedicado. Ele decide inserir a doutrina de Pasqually dentro da Maçonaria. Reforma um rito maçônico alemão (a Estrita Observância Templária), criando o Rito Escocês Retificado (RER), uma maçonaria explicitamente cristã.</p>
+                        
+                        <div class="mt-6 flex justify-around">
+                            <div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Louis-Claude_de_Saint-Martin.jpg" alt="Louis-Claude de Saint-Martin" class="h-48 rounded-md">
+                                <p class="text-center mt-2 text-sm">Louis-Claude de Saint-Martin (1743-1803)</p>
+                            </div>
+                            <div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Jacob-B%C3%B6hme.jpg" alt="Jacob Boehme" class="h-48 rounded-md">
+                                <p class="text-center mt-2 text-sm">Jacob Boehme (1575-1624)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">Cagliostro e o Rito Egípcio</h3>
+                    <p>Aproveitando a fascinação contínua pelo Egito e pelo "magnetismo animal" de Mesmer (precursor da hipnose), surge a figura controversa de Alessandro Cagliostro. Ele cria um Rito Egípcio maçônico, misturando elementos egípcios (reais ou inventados), práticas de magnetismo (induzindo transes em médiuns) e influências de uma ordem Rosacruz alemã alquímica (a Rosa-Cruz de Ouro).</p>
+                    
+                    <p class="mt-4">Cagliostro viaja pela Europa apresentando-se como um grande iniciado, realiza curas aparentemente milagrosas e atrai tanto admiradores quanto detratores. Sua trajetória termina nas prisões da Inquisição, mas seu Rito Egípcio influencia o desenvolvimento do ocultismo posterior.</p>
+                    
+                    <div class="mt-6">
+                        <img src="https://bibliot3ca.com/wp-content/uploads/2018/05/martinismo.jpg" alt="Símbolo Martinista" class="mx-auto rounded-md h-48">
+                        <p class="text-center mt-2 text-sm">Símbolo Martinista</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">c. 1760</span> - Martinez de Pasqually funda a Ordem dos Elus Coëns</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1774</span> - Morte de Pasqually</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1782</span> - Willermoz reforma a Estrita Observância Templária, criando o Rito Escocês Retificado</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1775-1785</span> - Auge da popularidade de Cagliostro e seu Rito Egípcio</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1803</span> - Morte de Louis-Claude de Saint-Martin</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">♄</div>
+        <div class="esoteric-symbol symbol-2">☌</div>
+    </section>
+
+    <!-- Slide 11: Explosão Ocultista -->
+    <section id="slide-11" class="slide">
+        <div class="slide-container">
+            <h2 class="title">O Século XIX e a <span class="gold-text">Explosão Ocultista</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">Eliphas Lévi: O Renovador</h3>
+                        <p>Eliphas Lévi (Alphonse Louis Constant) é o grande popularizador do ocultismo na Europa continental no século XIX. Suas obras (<i>Dogma e Ritual da Alta Magia</i>, <i>História da Magia</i>) revitalizam o interesse pela Cabala e pela Magia.</p>
+                        
+                        <p class="mt-4">Lévi realiza uma síntese impressionante, conectando o Tarot com a Cabala, a Alquimia e a Astrologia em um sistema coerente. Ele enfatiza a força da vontade no trabalho mágico e estabelece correspondências entre símbolos que influenciariam todos os ocultistas posteriores.</p>
+                        
+                        <p class="mt-4">Assim como Agrippa, ele admite ter "embaralhado" seus livros – a chave para ler <i>Dogma e Ritual</i> é ler capítulos correspondentes das duas partes (Dogma 1 com Ritual 1, etc.).</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Eliphas_Levi.png" alt="Eliphas Lévi" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Eliphas Lévi (1810-1875)</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">SRIA e a Golden Dawn: Magia Sistematizada</h3>
+                        <p>Na Inglaterra, surge a Societas Rosicruciana in Anglia (SRIA), uma ordem de altos graus maçônicos, focada em estudos teóricos. Seu presidente honorário foi Lord Bulwer-Lytton, autor do famoso romance rosacruz <i>Zanoni</i>.</p>
+                        
+                        <p class="mt-4">Membros da SRIA, como William Wynn Westcott, achando os estudos muito teóricos, decidem criar algo mais prático. Junto com Samuel Liddell MacGregor Mathers e William Robert Woodman, fundam a Ordem Hermética da Aurora Dourada (Golden Dawn) em 1888.</p>
+                        
+                        <p class="mt-4">A Golden Dawn se torna a mais influente ordem mágica do final do século XIX e início do XX. Eles sistematizaram Cabala, Tarot, astrologia, magia egípcia, enoquiana e hermetismo num currículo iniciático coeso.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Rose_Cross_Lamen.svg/1200px-Rose_Cross_Lamen.svg.png" alt="Rosa Cruz da Golden Dawn" class="mx-auto rounded-md h-48">
+                            <p class="text-center mt-2 text-sm">Rosa Cruz da Golden Dawn</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">Blavatsky e a Teosofia</h3>
+                    <p>Paralelamente, Helena Petrovna Blavatsky funda a Sociedade Teosófica em 1875. Embora mais conhecida por divulgar o esoterismo oriental, Blavatsky era também uma profunda conhecedora da tradição ocidental (como mostra sua obra <i>Ísis Sem Véu</i>).</p>
+                    
+                    <p class="mt-4">A Teosofia propõe uma síntese de todas as religiões, ciências e filosofias, buscando as verdades universais por trás das diferentes tradições. Blavatsky afirmava receber ensinamentos de Mestres ocultos e introduziu muitos conceitos orientais no pensamento ocultista ocidental.</p>
+                    
+                    <p class="mt-4">Houve um contato inicial entre Blavatsky e Westcott, com a ideia de criar um núcleo de estudos cabalísticos, mas os movimentos logo se separaram, com a Teosofia focando mais no Oriente e a Golden Dawn mantendo-se firmemente na tradição ocidental.</p>
+                    
+                    <div class="flex justify-center gap-8 mt-6">
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Helena_Blavatsky.jpg" alt="Helena Blavatsky" class="h-48 rounded-md">
+                            <p class="text-center mt-2 text-sm">Helena P. Blavatsky (1831-1891)</p>
+                        </div>
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Samuel_Liddell_MacGregor_Mathers_in_Egyptian_getup.jpg/220px-Samuel_Liddell_MacGregor_Mathers_in_Egyptian_getup.jpg" alt="MacGregor Mathers" class="h-48 rounded-md">
+                            <p class="text-center mt-2 text-sm">S.L. MacGregor Mathers (1854-1918)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">1854-1856</span> - Publicação de Dogma e Ritual da Alta Magia de Eliphas Lévi</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1866</span> - Fundação da Societas Rosicruciana in Anglia (SRIA)</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1875</span> - Fundação da Sociedade Teosófica</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1877</span> - Publicação de Ísis Sem Véu por Blavatsky</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1888</span> - Fundação da Ordem Hermética da Aurora Dourada (Golden Dawn)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">♀</div>
+        <div class="esoteric-symbol symbol-2">♂</div>
+    </section>
+
+    <!-- Slide 12: Ocultismo Moderno -->
+    <section id="slide-12" class="slide">
+        <div class="slide-container">
+            <h2 class="title">Ocultismo Moderno: <span class="gold-text">Crowley, Fortune, Papus</span></h2>
+            
+            <div class="content-card">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">Crowley e Thelema: A Sombra da Golden Dawn</h3>
+                        <p>A Golden Dawn atrai figuras brilhantes e controversas. A mais notória: Aleister Crowley. Um gênio multifacetado (poeta, alpinista, enxadrista), ele rapidamente domina o conhecimento da ordem, mas sua personalidade excêntrica e comportamento transgressor causam conflito.</p>
+                        
+                        <p class="mt-4">Mais tarde, Crowley assume o controle da Ordo Templi Orientis (O.T.O.) e usa-a como veículo para sua própria religião/filosofia, Thelema, recebida, segundo ele, de uma entidade chamada Aiwass no Cairo em 1904, e codificada no <i>Liber AL vel Legis</i> (Livro da Lei).</p>
+                        
+                        <p class="mt-4">O lema central: "Faze o que tu queres há de ser o todo da Lei. Amor é a lei, amor sob vontade". Crowley interpreta "vontade" (Will) como a verdadeira natureza ou propósito de cada indivíduo, que deve ser descoberto e seguido.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aleister_Crowley%2C_Golden_Dawn.jpg/640px-Aleister_Crowley%2C_Golden_Dawn.jpg" alt="Aleister Crowley" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Aleister Crowley (1875-1947)</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">Dion Fortune: A Luz Interior</h3>
+                        <p>Uma figura muito mais equilibrada que emerge da Golden Dawn é Dion Fortune (Violet Firth). Psicóloga pioneira da psicanálise na Inglaterra, ela adota o moto iniciático "Deo, non Fortuna" ("Por Deus, não pela Sorte").</p>
+                        
+                        <p class="mt-4">Ela escreve obras claras e profundas sobre Cabala (<i>A Cabala Mística</i>) e romances ocultistas que ensinam tanto quanto seus livros técnicos (<i>A Sacerdotisa do Mar</i>, <i>Goetia</i>). Funda a Sociedade da Luz Interior, que existe até hoje.</p>
+                        
+                        <p class="mt-4">Fortune integra psicologia junguiana com prática mágica, enfatizando o desenvolvimento equilibrado da personalidade e o contato com os aspectos superiores da mente. Seu trabalho propõe uma abordagem mais saudável e equilibrada do ocultismo.</p>
+                        
+                        <div class="mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/4/4d/Dion_Fortune.jpg" alt="Dion Fortune" class="mx-auto rounded-md">
+                            <p class="text-center mt-2 text-sm">Dion Fortune (1890-1946)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">Peladan, Papus e o Martinismo Francês</h3>
+                    <p>No sul da França, Joséphin Péladan, iniciado numa linhagem Rosacruz local, funda a Ordem Católica Rosacruz do Templo e do Graal. Ele também lança o movimento artístico Simbolista e apoia compositores como Erik Satie e Claude Debussy.</p>
+                    
+                    <p class="mt-4">Gérard Encausse (Papus), figura central do ocultismo francês, une forças com Stanislas de Guaita e outros. Papus, alegando uma linhagem iniciática que remontava a Saint-Martin, funda a Ordem Martinista em 1889, homenageando o místico, mas com um foco mais ocultista.</p>
+                    
+                    <p class="mt-4">Nos EUA, Harvey Spencer Lewis viaja para a França, afirma ter recebido iniciação dos últimos herdeiros da Rosa-Cruz de Toulouse, e funda a Antiga e Mística Ordem Rosae Crucis (AMORC). A AMORC se torna a maior organização rosacruciana do mundo, unindo ensinamentos ocidentais e orientais.</p>
+                    
+                    <div class="flex justify-center gap-8 mt-6">
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Bio-papus-image-1.jpg" alt="Papus" class="h-48 rounded-md">
+                            <p class="text-center mt-2 text-sm">Papus (Gérard Encausse, 1865-1916)</p>
+                        </div>
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Drlewis.gif" alt="Harvey Spencer Lewis" class="h-48 rounded-md">
+                            <p class="text-center mt-2 text-sm">H. Spencer Lewis (1883-1939)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container mt-8">
+                <div class="timeline-item">
+                    <p><span class="date">1889</span> - Fundação da Ordem Martinista por Papus</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1904</span> - Recebimento do Liber AL vel Legis por Crowley</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1915</span> - Fundação da AMORC por H. Spencer Lewis</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="date">1922</span> - Dion Fortune funda a Sociedade da Luz Interior</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">♆</div>
+        <div class="esoteric-symbol symbol-2">♇</div>
+    </section>
+
+    <!-- Slide 13: Textos Fundamentais -->
+    <section id="slide-13" class="slide">
+        <div class="slide-container">
+            <h2 class="title">Textos Fundamentais: <span class="gold-text">As Pedras Angulares do Esoterismo</span></h2>
+            
+            <div class="image-grid">
+                <div class="image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Corpus_Hermeticum.jpg/330px-Corpus_Hermeticum.jpg" alt="Corpus Hermeticum">
+                    <div class="caption">Corpus Hermeticum (c. séc. II-III d.C.)</div>
+                </div>
+                <div class="image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Zohar_first_edition.jpg" alt="Zohar">
+                    <div class="caption">Zohar (c. 1280)</div>
+                </div>
+                <div class="image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Fama_fraternitatis.jpg" alt="Fama Fraternitatis">
+                    <div class="caption">Fama Fraternitatis (1614)</div>
+                </div>
+                <div class="image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Chymical_Wedding_of_Christian_Rosenkreutz.jpg" alt="Núpcias Químicas">
+                    <div class="caption">As Núpcias Químicas de Christian Rosenkreutz (1616)</div>
+                </div>
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/91tnPS7DKIL._AC_UF1000,1000_QL80_.jpg" alt="Três Livros de Filosofia Oculta">
+                    <div class="caption">Três Livros de Filosofia Oculta (1531-1533)</div>
+                </div>
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/61onvwMM6VL._AC_UF1000,1000_QL80_.jpg" alt="Dogma e Ritual da Alta Magia">
+                    <div class="caption">Dogma e Ritual da Alta Magia (1854-1856)</div>
+                </div>
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/61TmUD714cL._AC_UF1000,1000_QL80_.jpg" alt="Liber AL vel Legis">
+                    <div class="caption">Liber AL vel Legis (1904)</div>
+                </div>
+                <div class="image-container">
+                    <img src="https://m.media-amazon.com/images/I/71s9uGSJNnL._AC_UF1000,1000_QL80_.jpg" alt="Jung on Active Imagination">
+                    <div class="caption">Jung on Active Imagination (compilação moderna)</div>
+                </div>
+            </div>
+            
+            <div class="content-card mt-8">
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">Os Textos Fundadores</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Corpus Hermeticum</strong> - Conjunto de textos atribuídos a Hermes Trismegisto, traduzidos por Ficino em 1463, formando a base do Hermetismo renascentista.</li>
+                            <li><strong>Zohar</strong> - Texto fundamental da Cabala judaica, apareceu na Espanha medieval, contendo comentários místicos sobre a Torá.</li>
+                            <li><strong>Fama Fraternitatis</strong> - Primeiro manifesto rosacruz, anunciando a Fraternidade e sua história mítica.</li>
+                            <li><strong>As Núpcias Químicas</strong> - Alegoria alquímica sobre a jornada espiritual do iniciado, atribuída a Johann Valentin Andreae.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">Os Grandes Compêndios</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Três Livros de Filosofia Oculta</strong> - Compilação enciclopédica de Agrippa sobre magia, cabala e hermetismo, influente até hoje.</li>
+                            <li><strong>Dogma e Ritual da Alta Magia</strong> - Obra-prima de Eliphas Lévi que revitalizou o ocultismo europeu no século XIX.</li>
+                            <li><strong>Liber AL vel Legis</strong> - O Livro da Lei de Crowley, fundamento da religião Thelema, supostamente ditado pela entidade Aiwass.</li>
+                            <li><strong>A Cabala Mística</strong> - Obra de Dion Fortune que tornou a Cabala acessível aos ocidentais modernos.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">O Impacto dos Textos Esotéricos</h3>
+                    <p>Estes textos não são apenas livros – são repositórios vivos de tradições, janelas para mundos de significado que transcendem suas páginas. Cada um deles causou ondas de transformação cultural e espiritual quando foi introduzido. O <i>Corpus Hermeticum</i> ajudou a desencadear o Renascimento; os manifestos rosacruzes provocaram uma febre de especulação esotérica; as obras de Lévi e Crowley revolucionaram a prática mágica moderna.</p>
+                    
+                    <p class="mt-4">Cada texto representa um nó na teia de tradições que forma o esoterismo ocidental. Juntos, eles formam um cânone não-oficial, um currículo para aqueles que buscam compreender as correntes ocultas que moldaram nossa história e cultura.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">⚕</div>
+        <div class="esoteric-symbol symbol-2">⚚</div>
+    </section>
+
+    <!-- Slide 14: O Rio Continua a Fluir -->
+    <section id="slide-14" class="slide">
+        <div class="slide-container">
+            <h2 class="title">O Rio Continua a Fluir: <span class="gold-text">A Tradição Ininterrupta</span></h2>
+            
+            <div class="content-card">
+                <p class="text-xl italic mb-8">"De sacerdotes egípcios a filósofos gregos, de alquimistas medievais a magos renascentistas, de Rosacruzes invisíveis a maçons construtores de catedrais e de caráter, de místicos franceses a ocultistas modernos... o que vimos hoje não são apenas histórias isoladas. É um vislumbre de uma Tradição contínua, um rio subterrâneo que atravessa toda a história ocidental."</p>
+                
+                <div class="two-columns">
+                    <div>
+                        <h3 class="subtitle gold-text">A Tradição Ininterrupta</h3>
+                        <p>Apesar das perseguições, guerras e revoluções culturais, o rio do conhecimento esotérico nunca deixou de fluir. Muitas vezes subterrâneo, outras vezes emergindo à superfície, ele conecta épocas e lugares aparentemente desconectados.</p>
+                        
+                        <p class="mt-4">As organizações mudaram, os nomes se transformaram, os símbolos evoluíram, mas os conceitos fundamentais permaneceram: correspondências, imaginação ativa, transmutação, concordância e transmissão. Em cada época, indivíduos e grupos redescobriram e adaptaram esse conhecimento para suas necessidades e contextos.</p>
+                        
+                        <p class="mt-4">Dos templos egípcios às lojas maçônicas, dos laboratórios alquímicos às ordens mágicas modernas, a busca por autotransformação e conexão com o divino permaneceu constante, permeando a cultura ocidental mesmo quando não reconhecida.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="subtitle gold-text">O Legado no Mundo Moderno</h3>
+                        <p>Hoje, esse legado continua vivo em diversas formas. As tradições iniciáticas clássicas (Maçonaria, AMORC, ordens martinistas) continuam a operar. Novas sínteses emergem, integrando psicologia, ecologia, feminismo e outras correntes contemporâneas ao corpus esotérico tradicional.</p>
+                        
+                        <p class="mt-4">Encontramos ecos dessa tradição na arte, literatura, cinema e música. De Shakespeare a Goethe, de Blake a Yeats, de Mozart a Wagner, e de aí até os surrealistas e além – todos beberam nessa fonte de inspiração.</p>
+                        
+                        <p class="mt-4">Mesmo as ciências modernas, que oficialmente romperam com a visão hermética, preservam vestígios dela. O próprio método científico, com sua busca pela unidade subjacente aos fenômenos naturais, tem raízes na visão alquímica de correspondências e interconexões.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="subtitle gold-text">O Desafio e o Convite</h3>
+                    <p>O grande desafio para os estudiosos e praticantes modernos é separar o trigo do joio – distinguir o conhecimento autêntico dos exageros, fraudes e fantasias. Isso requer discernimento, pesquisa séria e, paradoxalmente, experiência vivida.</p>
+                    
+                    <p class="mt-4">Mas nada se cria do zero. Somos todos herdeiros, continuadores. As formas mudam, os nomes se alteram, mas a busca por conhecimento, por autotransformação, pela conexão com algo maior, persiste. Oriente e Ocidente, como a Lótus e a Rosa, sempre se tocaram, sempre se nutriram mutuamente.</p>
+                    
+                    <p class="mt-4">Talvez, ao reconhecer esse fluxo subterrâneo, possamos não só entender melhor o passado, mas também despertar nosso próprio potencial adormecido no presente. A chama de Prometheus, a chama do conhecimento, foi roubada para a humanidade. Cabe a nós mantê-la acesa.</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-12">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Kabbalah_Tree_of_Life.png" alt="Árvore da Vida" class="h-64">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rosy_Cross.svg/640px-Rosy_Cross.svg.png" alt="Rosa Cruz" class="h-64 mx-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Square_compasses.svg" alt="Esquadro e Compasso" class="h-64">
+            </div>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">☤</div>
+        <div class="esoteric-symbol symbol-2">⚛</div>
+    </section>
+
+    <!-- Slide 15: Chamada para Ação -->
+    <section id="slide-15" class="slide">
+        <div class="slide-container text-center">
+            <h2 class="title mx-auto">Desvendando os Segredos</h2>
+            
+            <div class="content-card">
+                <p class="text-xl mb-8">Quer desvendar os segredos de uma dessas figuras enigmáticas? Acompanhe o canal Prometheus para mergulhar na mente de mestres como Eliphas Lévi, Paracelso, os Templários e muito mais.</p>
+                
+                <div class="flex justify-center mb-12">
+                    <img src="https://files.fm/thumb_show.php?i=gt33mzj7jq" alt="Prometheus Logo" class="h-32">
+                </div>
+                
+                <h3 class="subtitle gold-text">Tópicos Futuros</h3>
+                
+                <div class="grid grid-cols-2 gap-4 mt-6 max-w-3xl mx-auto">
+                    <div class="concept-card">A Verdadeira História dos Templários</div>
+                    <div class="concept-card">Paracelso: O Médico Revolucionário</div>
+                    <div class="concept-card">Eliphas Lévi e a Renovação da Magia</div>
+                    <div class="concept-card">A Magia Sexual de Aleister Crowley</div>
+                    <div class="concept-card">Descodificando o Tarot</div>
+                    <div class="concept-card">Alquimia: Ciência ou Espiritualidade?</div>
+                </div>
+                
+                <div class="mt-12">
+                    <h3 class="subtitle gold-text">Siga-nos</h3>
+                    
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@Prometheus36" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a href="https://www.instagram.com/prometheus.36/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://www.tiktok.com/@prometheus.36" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="mt-12 italic">"A chama do conhecimento foi roubada para a humanidade. Cabe a nós mantê-la acesa."</p>
+        </div>
+        
+        <div class="esoteric-symbol symbol-1">♈</div>
+        <div class="esoteric-symbol symbol-2">♑</div>
+    </section>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= slides.length) index = slides.length - 1;
+            
+            currentSlide = index;
+            
+            // Scroll to the slide
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+            
+            // Update button states
+            document.getElementById('prevBtn').style.opacity = index === 0 ? '0.5' : '1';
+            document.getElementById('nextBtn').style.opacity = index === slides.length - 1 ? '0.5' : '1';
+        }
+        
+        function navigateSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                navigateSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                navigateSlide(-1);
+            }
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
